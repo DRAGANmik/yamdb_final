@@ -1,4 +1,5 @@
-[![pep8 codestyle](https://github.com/DRAGANmik/api_yamdb/actions/workflows/codestyle.yml/badge.svg?branch=master)](https://github.com/DRAGANmik/api_yamdb/actions/workflows/codestyle.yml)
+[![build and deploy](https://github.com/DRAGANmik/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)](https://github.com/DRAGANmik/yamdb_final/actions/workflows/yamdb_workflow.yaml)
+[![pep8 codestyle](https://github.com/DRAGANmik/yamdb_final/actions/workflows/codestyle.yml/badge.svg)](https://github.com/DRAGANmik/yamdb_final/actions/workflows/codestyle.yml)
 
 # api_yamdb
 
