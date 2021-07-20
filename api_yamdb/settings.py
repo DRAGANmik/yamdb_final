@@ -15,7 +15,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     ".draganmk.ml",
-                 ]
+]
 
 
 # Application definition
