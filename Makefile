@@ -1,4 +1,4 @@
-grunserver:
+runserver:
 	python manage.py runserver
 
 migrate:

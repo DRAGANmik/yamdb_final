@@ -13,9 +13,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "yoursecretkey")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    ".draganmk.ml",
-]
+ALLOWED_HOSTS = [""]
 
 
 # Application definition
