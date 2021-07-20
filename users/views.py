@@ -1,17 +1,18 @@
+from django.contrib.auth.tokens import default_token_generator
+from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action
-from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, viewsets, permissions
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import AccessToken
+
+from users.models import User
+from users.permissions import IsADM
 from users.serializers import (
-    UserSerializer,
     DetailSerializer,
     EmailConfirmationSerializer,
     TokenSerializer,
+    UserSerializer,
 )
-from users.models import User
-from users.permissions import IsADM
-from django.contrib.auth.tokens import default_token_generator
-from rest_framework_simplejwt.tokens import AccessToken
 
 
 class TokenAPI(APIView):

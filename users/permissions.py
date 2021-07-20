@@ -8,3 +8,4 @@ class IsADM(permissions.BasePermission):
                 (request.user and request.user.is_staff)
                 or (request.user and request.user.is_admin)
             )
+        return False

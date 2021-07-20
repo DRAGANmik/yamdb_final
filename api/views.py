@@ -1,22 +1,20 @@
-from rest_framework import viewsets, filters
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
-
-
-from .serializers import CommentSerializer, ReviewSerializer
 from django.db.models import Avg
-from .models import Comment, Review
-from .models import Title, Category, Genre
-from rest_framework import mixins
-from .serializers import (
-    TitleWriteSerializer,
-    TitleReadSerializer,
-    CategorySerializer,
-    GenreSerializer,
-)
-from .permissions import IsAdmin, IsModeratorOrAuthor
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 from .filters import TitleFilter
+from .models import Category, Comment, Genre, Review, Title
+from .permissions import IsAdmin, IsModeratorOrAuthor
+from .serializers import (
+    CategorySerializer,
+    CommentSerializer,
+    GenreSerializer,
+    ReviewSerializer,
+    TitleReadSerializer,
+    TitleWriteSerializer,
+)
 
 
 class CreateListDestroyViewSet(
@@ -80,8 +78,7 @@ class CommentViewSet(viewsets.ModelViewSet):
             pk=self.kwargs.get("review_id"),
             title_id=self.kwargs.get("title_id"),
         )
-        queryset = Comment.objects.filter(review=review)
-        return queryset
+        return Comment.objects.filter(review=review)
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
@@ -94,5 +91,4 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         title = get_object_or_404(Title, pk=self.kwargs.get("title_id"))
-        queryset = Review.objects.filter(title=title)
-        return queryset
+        return Review.objects.filter(title=title)
