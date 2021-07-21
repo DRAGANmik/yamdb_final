@@ -25,34 +25,8 @@ Docker
 Black - форматирование кода
 ```
 
-## Установка локально с БД в Docker
-- Запустите контейнер с БД:
-    ```shell
-    docker-compose -f local.yaml up --build -d
-    ```
-  При первом запуске необходимо применить миграции:
-    ```shell
-    python manage.py migrate
-    ```
-  Создать суперпользователя:
-    ```shell
-    python manage.py createsuperuser
-    ```
-  
-- Теперь можно запустить проект, он будет использовать БД в контейнере:
-    ```shell
-    python manage.py runserver
-    ```
-  
-- Остановить контейнер с БД:
-    ```shell
-    docker-compose -f local.yaml down
-    ```
-- Остановить контейнер с БД удалив данные:
-    ```shell
-    docker-compose -f local.yaml down --volumes
 
-## Запуск проекта локально в Docker окружении и заполнить данными
+## Запуск проекта в Docker окружении и заполнить данными
 - Запустить проект:
     ```shell
     docker-compose up --build -d
